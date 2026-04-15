@@ -1,0 +1,29 @@
+#  UNO Java Project - Versión 3.1 (Refactorización)
+
+Implementación completa y funcional del clásico juego de cartas UNO en Java (Consola). 
+
+## Novedades de la v3 (Refactorización)
+- **Arquitectura Polimórfica:** Separación de lógica mediante herencia (Clase abstracta `Jugador` y sus hijas `JugadorHumano` y `JugadorComputadora`).
+- **Número Variable de Jugadores:** El sistema permite elegir entre 1 y 3 bots oponentes de forma dinámica (2 a 4 jugadores en total).
+- **Manejo de Excepciones:** Bloques `try-catch` implementados para prevenir fallos por entradas incorrectas de datos.
+- **Reglas Oficiales Faltantes:** - Penalización estricta de 2 cartas por olvidar escribir "UNO" al tener una sola carta.
+  - La carta *Reversa* funciona como *Salto* en partidas de 2 jugadores.
+- **Código Limpio (SOLID):** Reducción de acoplamiento al extraer la lógica de interacción de consola fuera de la clase principal `JuegoUno`.
+
+##  Requisitos Previos
+- Java Development Kit (JDK) 8 o superior.
+- Terminal o IDE de Java.
+
+##  Cómo ejecutar el juego
+1. Compila los archivos fuente desde la raíz del proyecto:
+   `javac uno/*.java`
+2. Ejecuta la clase principal:
+   `java uno.Main`
+
+##  Controles e Instrucciones
+1. El sistema te pedirá tu nombre y la cantidad de bots contra los que deseas jugar (1 a 3).
+2. En tu turno, verás tu mano con un **índice numérico** `[0]`, `[1]`, etc.
+3. Escribe el número del índice de la carta que deseas jugar y presiona `Enter`.
+4. Si no tienes cartas válidas, escribe la letra `t` para robar una carta.
+5. Al jugar un Comodín o un Roba 4, introduce un número del `1 al 4` para establecer el nuevo color.
+6. **¡IMPORTANTE!** Cuando te quede una carta en la mano, el sistema te pedirá confirmación. Debes escribir la palabra `UNO`, de lo contrario, serás penalizado con 2 cartas.
